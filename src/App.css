@@ -1,0 +1,11 @@
+.wishlist {
+  background-color: rgb(230, 227, 227);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100%;
+  width: 100%;
+}
+
+.btn-light {
+  width: 400px;
+}
