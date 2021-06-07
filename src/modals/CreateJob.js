@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const Createjob = ({modal, toggle}) => {
+const Createjob = ({modal, toggle, stack}) => {
     const [companyName, setCompany] = useState('');
     const [jobTitle, setJobTitle] = useState('');
 
@@ -14,6 +14,13 @@ const Createjob = ({modal, toggle}) => {
         }else{
             setJobTitle(value)
         }
+    }
+
+    const handlerStack = () => {
+        let wishCompany = {};
+        wishCompany["company"] = companyName;
+        wishCompany["job"] = jobTitle;
+        stack(wishCompany);
     }
 
     return (
@@ -30,7 +37,7 @@ const Createjob = ({modal, toggle}) => {
                 </form>
             </ModalBody>
             <ModalFooter>
-            <Button color="primary" onClick={toggle}>Continue</Button>{' '}
+            <Button color="primary" onClick={handlerStack}>Continue</Button>{' '}
             </ModalFooter>
       </Modal>
     )

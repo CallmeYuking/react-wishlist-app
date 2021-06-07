@@ -13,6 +13,7 @@ const TodoList = () => {
         let tempList = companyList;
         tempList.push(job);
         setCompanyList(tempList);
+        setModal(false);
     }
     return (
       <div className="body">
@@ -22,11 +23,11 @@ const TodoList = () => {
             <button className="btn btn-light btn-lg mt-5" onClick = {() => setModal(true)}> + </button>
         </div>
 
-        <div>
-
+        <div className="task-container">
+            {companyList.map((obj) => <li>{obj.company}</li>)}
         </div>
 
-        <CreateJob toggle = {toggle} modal = {modal} />
+        <CreateJob toggle={toggle} modal={modal} stack={companyStask}/>
       </div>
     )
 }
