@@ -2,7 +2,7 @@ import './App.css';
 import TodoList from './components/TodoList'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-function App() {
+const App = () => {
   return (
     <div className="wishlist">
       <TodoList />
