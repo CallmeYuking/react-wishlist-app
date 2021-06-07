@@ -3,9 +3,16 @@ import CreateJob from '../modals/CreateJob'
 
 const TodoList = () => {
     const [modal, setModal] = useState(false);
+    const [companyList, setCompanyList] = useState([]);
 
     const toggle = () => {
         setModal(!modal);
+    }
+
+    const companyStask = (job) => {
+        let tempList = companyList;
+        tempList.push(job);
+        setCompanyList(tempList);
     }
     return (
       <div className="body">
