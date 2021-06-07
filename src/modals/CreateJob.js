@@ -32,7 +32,7 @@ const Createjob = ({modal, toggle, stack}) => {
                         <input type="text" placeholder="Company Name" className="form-control" value={companyName} onChange={handleChange} name="company"/>
                     </div>
                     <div className="form-group mt-3 mb-3">
-                        <input type="text" placeholder="Job Title"className="form-control" value={jobTitle} onChange={handleChange} name="job"/>
+                        <input type="text" placeholder="Job Title" className="form-control" value={jobTitle} onChange={handleChange} name="job"/>
                     </div>
                 </form>
             </ModalBody>

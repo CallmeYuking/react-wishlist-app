@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import CreateJob from '../modals/CreateJob'
+import CreateJob from '../modals/CreateJob';
+import Card from './Card';
 
-const TodoList = () => {
+const WishList = () => {
     const [modal, setModal] = useState(false);
     const [companyList, setCompanyList] = useState([]);
 
@@ -17,9 +18,9 @@ const TodoList = () => {
         setModal(!modal);
     }
 
-    const companyStask = (job) => {
+    const companyStask = (companyObj) => {
         let tempList = companyList;
-        tempList.push(job);
+        tempList.push(companyObj);
         localStorage.setItem("companyList",JSON.stringify(tempList))
         setCompanyList(companyList);
         setModal(false);
@@ -33,7 +34,7 @@ const TodoList = () => {
         </div>
 
         <div className="task-container">
-            {companyList.map((obj) => <li>{obj.company}</li>)}
+            {companyList.map((obj, index) => <Card companyObj={obj} index={index}/>)}
         </div>
 
         <CreateJob toggle={toggle} modal={modal} stack={companyStask}/>
@@ -41,4 +42,4 @@ const TodoList = () => {
     )
 }
 
-export default TodoList
+export default WishList

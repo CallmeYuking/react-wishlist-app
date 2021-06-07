@@ -1,11 +1,11 @@
 import './App.css';
-import TodoList from './components/TodoList'
+import WishList from './components/WishList'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
   return (
     <div className="wishlist">
-      <TodoList />
+      <WishList />
     </div>
   );
 }
