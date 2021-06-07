@@ -20,7 +20,7 @@ const Createjob = ({modal, toggle, stack}) => {
         let wishCompany = {};
         wishCompany["company"] = companyName;
         wishCompany["job"] = jobTitle;
-        stack(wishCompany);
+        stack(wishCompany); 
     }
 
     return (

@@ -1,9 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import CreateJob from '../modals/CreateJob'
 
 const TodoList = () => {
     const [modal, setModal] = useState(false);
     const [companyList, setCompanyList] = useState([]);
+
+    useEffect(() => {
+        let arr = localStorage.getItem("companyList")
+        if(arr){
+            let obj = JSON.parse(arr)
+            setCompanyList(obj)
+        }
+    }, [])
 
     const toggle = () => {
         setModal(!modal);
@@ -12,7 +20,8 @@ const TodoList = () => {
     const companyStask = (job) => {
         let tempList = companyList;
         tempList.push(job);
-        setCompanyList(tempList);
+        localStorage.setItem("companyList",JSON.stringify(tempList))
+        setCompanyList(companyList);
         setModal(false);
     }
     return (
