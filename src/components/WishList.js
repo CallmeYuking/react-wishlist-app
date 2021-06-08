@@ -14,6 +14,14 @@ const WishList = () => {
         }
     }, [])
 
+    const deleteTask = (index) => {
+        let tempList = companyList;
+        tempList.splice(index, 1)
+        localStorage.setItem("companyList", JSON.stringify(tempList))
+        setCompanyList(tempList)
+        window.location.reload();
+    }
+
     const toggle = () => {
         setModal(!modal);
     }
@@ -34,7 +42,7 @@ const WishList = () => {
         </div>
 
         <div className="task-container">
-            {companyList.map((obj, index) => <Card companyObj={obj} index={index}/>)}
+            {companyList.map((obj, index) => <Card companyObj={obj} index={index} deleteTask={deleteTask}/>)}
         </div>
 
         <CreateJob toggle={toggle} modal={modal} stack={companyStask}/>
